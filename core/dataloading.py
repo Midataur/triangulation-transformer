@@ -15,7 +15,7 @@ class SimpleDataset(Dataset):
         isosigs = [] # the pairs of numbers
         targets = [] # the things to predict
 
-        for isosig in data[:1000]:
+        for isosig in data:
           tokenized = tokenize_list(isosig)
 
           isosigs.append(tokenized[:-1])
