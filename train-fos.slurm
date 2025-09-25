@@ -10,7 +10,7 @@
 #SBATCH --nodes=1
 
 # The name of the job:
-#SBATCH --job-name="sts-training"
+#SBATCH --job-name="triangulation-training"
 
 # The project ID which this job should run under:
 #SBATCH --account="punim2163"

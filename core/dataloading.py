@@ -16,8 +16,13 @@ class SimpleDataset(Dataset):
         targets = [] # the things to predict
 
         for isosig in data:
-          tokenized = tokenize_list(isosig)
+          # pad sequence
+          padded = isosig + "\n"*(self.config.context_length-len(isosig))
 
+          # tokenize sequence
+          tokenized = tokenize_list(padded)
+
+          # save shifted sequences
           isosigs.append(tokenized[:-1])
           targets.append(tokenized[1:])
 
