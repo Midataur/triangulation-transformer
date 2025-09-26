@@ -1,6 +1,7 @@
 from utilities import *
-from torch.utils.data import DataLoader, Dataset
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import Dataset
+from torch.utils.data import Dataset
+from tqdm import tqdm
 import torch
 
 class SimpleDataset(Dataset):
@@ -15,7 +16,7 @@ class SimpleDataset(Dataset):
         isosigs = [] # the pairs of numbers
         targets = [] # the things to predict
 
-        for isosig in data:
+        for isosig in tqdm(data):
           # pad sequence
           padded = isosig + "\n"*(self.config.context_length-len(isosig))
 
@@ -25,6 +26,8 @@ class SimpleDataset(Dataset):
           # save shifted sequences
           isosigs.append(tokenized[:-1])
           targets.append(tokenized[1:])
+
+          print(len(tokenized))
 
         # save it as tensors
         self.isosigs = torch.tensor(isosigs, dtype=int)
