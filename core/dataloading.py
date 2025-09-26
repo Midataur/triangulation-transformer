@@ -27,7 +27,7 @@ class SimpleDataset(Dataset):
           isosigs.append(tokenized[:-1])
           targets.append(tokenized[1:])
 
-          if len(tokenized) != 140:
+          if len(tokenized) != config.context_length:
               print(isosig)
               print(tokenized)
               raise Exception(f"Got sequence of length {len(tokenized)}")
