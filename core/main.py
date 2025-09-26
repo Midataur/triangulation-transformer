@@ -6,7 +6,7 @@ import torch
 torch.manual_seed(42)
 
 CONFIG = ProblemConfig(
-    modelname="test-5",
+    modelname="new-format-1",
     embed_d=402,
     n_heads=6,
     n_blocks=8,
@@ -18,7 +18,7 @@ CONFIG = ProblemConfig(
     threshold=0.01,
     n_workers=0,
     vocab_size=len(VOCABULARY),
-    context_length=140,
+    context_length=68,
     use_mask=True,
     PATH="."
 )
