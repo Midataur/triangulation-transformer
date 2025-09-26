@@ -6,13 +6,13 @@ import torch
 torch.manual_seed(42)
 
 CONFIG = ProblemConfig(
-    modelname="test-4",
+    modelname="test-5",
     embed_d=402,
     n_heads=6,
     n_blocks=8,
     learning_rate=3*(10**-4),
     batchsize=64,
-    weight_decay=0.1,
+    weight_decay=0.01,
     lr_factor=0.1,
     lr_patience=10,
     threshold=0.01,
