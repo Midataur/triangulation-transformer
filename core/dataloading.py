@@ -27,7 +27,10 @@ class SimpleDataset(Dataset):
           isosigs.append(tokenized[:-1])
           targets.append(tokenized[1:])
 
-          print(len(tokenized))
+          if len(tokenized) != 140:
+              print(isosig)
+              print(tokenized)
+              raise Exception(f"Got sequence of length {len(tokenized)}")
 
         # save it as tensors
         self.isosigs = torch.tensor(isosigs, dtype=int)

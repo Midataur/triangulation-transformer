@@ -18,7 +18,7 @@ CONFIG = ProblemConfig(
     threshold=0.01,
     n_workers=0,
     vocab_size=len(VOCABULARY),
-    context_length=139,
+    context_length=140,
     use_mask=True,
     PATH="."
 )
